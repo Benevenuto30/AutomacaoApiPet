@@ -1,30 +1,33 @@
 package isolatedApi;
 
 import factory.PetDataFactory;
-import factory.UserDataFactory;
 import io.restassured.http.ContentType;
+import org.junit.Before;
 import org.junit.Test;
 import pojo.Pet;
-import pojo.User;
+import support.BaseUri;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
 
-public class CreatePet {
-    int id;
-    @Test
-    public void testCreatePet(){
-        baseURI = "https://petstore.swagger.io/v2";
+public class CreatePetTest {
+    public int id;
 
+    public void testCreateBrutusPet(){
         Pet pet = new PetDataFactory().createPet();
 
-        this.id = given()
+        BaseUri uri = new BaseUri();
+        baseURI = uri.uri;
+
+        this.id =  given()
                 .contentType(ContentType.JSON)
                 .body(pet)
         .when()
                 .post("/pet")
         .then()
+                .log().all()
+                .assertThat().statusCode(200).body("name", equalTo("Brutus"))
                 .extract().path("id");
-        System.out.println(id);
     }
 }
