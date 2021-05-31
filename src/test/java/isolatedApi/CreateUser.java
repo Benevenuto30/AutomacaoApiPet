@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
-public class CreateUserTest {
+public class CreateUser {
 
     @Before
     public void setup(){
@@ -19,7 +19,7 @@ public class CreateUserTest {
     }
 
 
-    public void testCreateUser(){
+    public void createUser(){
         User user = new UserDataFactory().createUser();
 
         BaseUri uri = new BaseUri();
@@ -31,7 +31,6 @@ public class CreateUserTest {
         .when()
                 .post("/user")
         .then()
-                .log().all()
                 .assertThat().statusCode(200);
     }
 

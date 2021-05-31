@@ -1,24 +1,54 @@
 package apiTest;
 
-import isolatedApi.CreatePetTest;
-import isolatedApi.CreateUserTest;
+import isolatedApi.Store;
+import isolatedApi.CreatePet;
+import isolatedApi.CreateUser;
 import org.junit.Test;
+
+import java.io.IOException;
 
 public class ApiTest {
 
     @Test
     public void testCreateUser(){
 
-        CreateUserTest create = new CreateUserTest();
-        create.testCreateUser();
+        CreateUser User = new CreateUser();
+        User.createUser();
 
     }
 
     @Test
     public void testCreatePet(){
 
-        CreatePetTest create = new CreatePetTest();
-        create.testCreateBrutusPet();
+        CreatePet Pet = new CreatePet();
+        Pet.createPet();
 
+    }
+
+    @Test
+    public void testCreateOrder() throws IOException {
+        CreateUser User = new CreateUser();
+        User.createUser();
+
+        CreatePet Pet = new CreatePet();
+        Pet.createPet();
+
+        Store Order = new Store();
+        Order.createOrder();
+    }
+
+    @Test
+    public void testConsultOrder() throws IOException {
+        CreateUser User = new CreateUser();
+        User.createUser();
+
+        CreatePet Pet = new CreatePet();
+        Pet.createPet();
+
+        Store Order = new Store();
+        Order.createOrder();
+
+        Store consultOrder = new Store();
+        consultOrder.consultOrder();
     }
 }

@@ -2,8 +2,6 @@ package isolatedApi;
 
 import factory.PetDataFactory;
 import io.restassured.http.ContentType;
-import org.junit.Before;
-import org.junit.Test;
 import pojo.Pet;
 import support.BaseUri;
 
@@ -11,10 +9,10 @@ import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class CreatePetTest {
+public class CreatePet {
     public int id;
 
-    public void testCreateBrutusPet(){
+    public void createPet(){
         Pet pet = new PetDataFactory().createPet();
 
         BaseUri uri = new BaseUri();
@@ -26,7 +24,6 @@ public class CreatePetTest {
         .when()
                 .post("/pet")
         .then()
-                .log().all()
                 .assertThat().statusCode(200).body("name", equalTo("Brutus"))
                 .extract().path("id");
     }
