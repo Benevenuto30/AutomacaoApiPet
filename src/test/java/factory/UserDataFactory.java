@@ -1,19 +1,19 @@
 package factory;
 
-import pojo.User;
+import pojo.CreateUser;
 
 public class UserDataFactory {
 
-    public static User createUser(){
-        User user = new User();
-        user.setId(1);
-        user.setFirstName("Maria");
-        user.setLastName("Assunção");
-        user.setUserName("Maria Assunção");
-        user.setEmail("maria@email.com");
-        user.setPhone("123456");
-        user.setPassword("654321");
-        return user;
+    public static CreateUser createUser(){
+        CreateUser createUser = new CreateUser();
+        createUser.setId(1);
+        createUser.setFirstName("Maria");
+        createUser.setLastName("Assunção");
+        createUser.setUserName("Maria Assunção");
+        createUser.setEmail("maria@email.com");
+        createUser.setPhone("123456");
+        createUser.setPassword("654321");
+        return createUser;
     }
 
 }

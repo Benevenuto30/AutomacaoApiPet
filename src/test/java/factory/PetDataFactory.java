@@ -1,16 +1,16 @@
 package factory;
 
-import pojo.Pet;
+import pojo.CreatePet;
 
 public class PetDataFactory {
 
-    public static Pet createPet (){
+    public static CreatePet createPet (){
 
-        Pet pet = new Pet();
-        pet.setId(1);
-        pet.setName("Brutus");
-        pet.setBreed("dog");
-        return pet;
+        CreatePet createPet = new CreatePet();
+        createPet.setId(1);
+        createPet.setName("Brutus");
+        createPet.setBreed("dog");
+        return createPet;
 
     }
 }

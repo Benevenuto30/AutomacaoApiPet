@@ -2,25 +2,25 @@ package isolatedApi;
 
 import factory.PetDataFactory;
 import io.restassured.http.ContentType;
-import pojo.Pet;
+import pojo.CreatePet;
 import support.BaseUri;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class CreatePet {
-    public int id;
+public class Pet {
+    public int petId;
 
     public void createPet(){
-        Pet pet = new PetDataFactory().createPet();
+        CreatePet createPet = new PetDataFactory().createPet();
 
         BaseUri uri = new BaseUri();
         baseURI = uri.uri;
 
-        this.id =  given()
+        this.petId =  given()
                 .contentType(ContentType.JSON)
-                .body(pet)
+                .body(createPet)
         .when()
                 .post("/pet")
         .then()

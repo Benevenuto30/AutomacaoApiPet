@@ -1,8 +1,8 @@
 package apiTest;
 
 import isolatedApi.Store;
-import isolatedApi.CreatePet;
-import isolatedApi.CreateUser;
+import isolatedApi.Pet;
+import isolatedApi.User;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -12,7 +12,7 @@ public class ApiTest {
     @Test
     public void testCreateUser(){
 
-        CreateUser User = new CreateUser();
+        User User = new User();
         User.createUser();
 
     }
@@ -20,17 +20,17 @@ public class ApiTest {
     @Test
     public void testCreatePet(){
 
-        CreatePet Pet = new CreatePet();
+        Pet Pet = new Pet();
         Pet.createPet();
 
     }
 
     @Test
     public void testCreateOrder() throws IOException {
-        CreateUser User = new CreateUser();
+        User User = new User();
         User.createUser();
 
-        CreatePet Pet = new CreatePet();
+        Pet Pet = new Pet();
         Pet.createPet();
 
         Store Order = new Store();
@@ -39,10 +39,10 @@ public class ApiTest {
 
     @Test
     public void testConsultOrder() throws IOException {
-        CreateUser User = new CreateUser();
+        User User = new User();
         User.createUser();
 
-        CreatePet Pet = new CreatePet();
+        Pet Pet = new Pet();
         Pet.createPet();
 
         Store Order = new Store();

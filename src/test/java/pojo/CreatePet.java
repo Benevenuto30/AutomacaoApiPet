@@ -1,6 +1,6 @@
 package pojo;
 
-public class Pet {
+public class CreatePet {
 
     private int id;
     private String name;

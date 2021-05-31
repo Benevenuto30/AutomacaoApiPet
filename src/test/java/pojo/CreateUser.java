@@ -1,6 +1,6 @@
 package pojo;
 
-public class User {
+public class CreateUser {
 
 
     private int id;

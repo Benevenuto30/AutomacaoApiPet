@@ -11,9 +11,8 @@ import static io.restassured.RestAssured.given;
 
 public class Store {
 
-    //CreatePetTest teste = new CreatePetTest();
-    //int a = teste.id;
-
+    Pet petId = new Pet();
+    int id = petId.petId;
 
     public void createOrder() throws IOException {
 
@@ -26,7 +25,7 @@ public class Store {
                 .body(order)
                 .when()
                 .post("/store/order")
-                .then()
+                .then().log().all()
                 .assertThat().statusCode(200);
 
     }
