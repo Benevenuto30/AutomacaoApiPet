@@ -1,8 +1,7 @@
-package isolatedApi;
+package apis;
 
 import factory.UserDataFactory;
 import io.restassured.http.ContentType;
-import org.junit.Before;
 import support.BaseUri;
 
 import static io.restassured.RestAssured.*;

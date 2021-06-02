@@ -1,8 +1,8 @@
-package apiTest;
+package tests;
 
-import isolatedApi.Store;
-import isolatedApi.Pet;
-import isolatedApi.User;
+import apis.Store;
+import apis.Pet;
+import apis.User;
 import org.junit.Test;
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package isolatedApi;
+package apis;
 
 import factory.PetDataFactory;
 import io.restassured.http.ContentType;
