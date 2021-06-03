@@ -12,43 +12,43 @@ public class ApiTest {
     @Test
     public void testCreateUser(){
 
-        User User = new User();
-        User.createUser();
+        User UserMaria = new User();
+        UserMaria.createUser();
 
     }
 
     @Test
     public void testCreatePet(){
 
-        Pet Pet = new Pet();
-        Pet.createPet();
+        Pet PetBrutus = new Pet();
+        PetBrutus.createPet();
 
     }
 
     @Test
     public void testCreateOrder() throws IOException {
-        User User = new User();
-        User.createUser();
+        User UserMaria = new User();
+        UserMaria.createUser();
 
-        Pet Pet = new Pet();
-        Pet.createPet();
+        Pet PetBrutus = new Pet();
+        PetBrutus.createPet();
 
-        Store Order = new Store();
-        Order.createOrder();
+        Store OrderToMaria = new Store();
+        OrderToMaria.createOrder();
     }
 
     @Test
     public void testConsultOrder() throws IOException {
-        User User = new User();
-        User.createUser();
+        User UserMaria = new User();
+        UserMaria.createUser();
 
-        Pet Pet = new Pet();
-        Pet.createPet();
+        Pet PetBrutus = new Pet();
+        PetBrutus.createPet();
 
-        Store Order = new Store();
-        Order.createOrder();
+        Store OrderToMaria = new Store();
+        OrderToMaria.createOrder();
 
-        Store consultOrder = new Store();
-        consultOrder.consultOrder();
+        Store consultOrderToMaria = new Store();
+        consultOrderToMaria.consultOrder();
     }
 }

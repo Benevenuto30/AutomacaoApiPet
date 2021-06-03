@@ -16,30 +16,30 @@ public class Store {
 
     public void createOrder() throws IOException {
 
-        pojo.Order order = new OrderDataFactory().createOrderJson();
-        BaseUri uri = new BaseUri();
-        baseURI = uri.uri;
+        pojo.Order newOrder = new OrderDataFactory().createOrderJson();
+        BaseUri uriPetApi = new BaseUri();
+        baseURI = uriPetApi.uri;
 
         given()
                 .contentType(ContentType.JSON)
-                .body(order)
+                .body(newOrder)
                 .when()
                 .post("/store/order")
-                .then().log().all()
+                .then()
                 .assertThat().statusCode(200);
 
     }
 
     public void consultOrder (){
 
-        BaseUri uri = new BaseUri();
-        baseURI = uri.uri;
+        BaseUri uriPetApi = new BaseUri();
+        baseURI = uriPetApi.uri;
 
         given()
                 .contentType(ContentType.JSON)
                 .when()
                 .get("/store/order/{id}",1)
-                .then().log().all()
+                .then()
                 .assertThat().statusCode(200).body(
                                             "petId",equalTo(1),
                 "status",equalToIgnoringCase("Delivered"));

@@ -11,19 +11,19 @@ public class User {
     public String userId;
 
     public void createUser(){
-        pojo.CreateUser createUser = new UserDataFactory().createUser();
 
-        BaseUri uri = new BaseUri();
-        baseURI = uri.uri;
+        pojo.CreateUser createUserMaria = new UserDataFactory().createUser();
+
+        BaseUri uriPetApi = new BaseUri();
+        baseURI = uriPetApi.uri;
 
        this.userId = given()
                 .contentType(ContentType.JSON)
-                .body(createUser)
+                .body(createUserMaria)
         .when()
                 .post("/user")
-        .then().log().all()
+        .then()
                 .assertThat().statusCode(200).extract().path("message");
-        System.out.println(userId);
     }
 
 }

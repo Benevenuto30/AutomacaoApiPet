@@ -13,14 +13,14 @@ public class Pet {
     public int petId;
 
     public void createPet(){
-        CreatePet createPet = new PetDataFactory().createPet();
+        CreatePet createPetBrutus = new PetDataFactory().createPet();
 
-        BaseUri uri = new BaseUri();
-        baseURI = uri.uri;
+        BaseUri uriPetApi = new BaseUri();
+        baseURI = uriPetApi.uri;
 
         this.petId =  given()
                 .contentType(ContentType.JSON)
-                .body(createPet)
+                .body(createPetBrutus)
         .when()
                 .post("/pet")
         .then()
