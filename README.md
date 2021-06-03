@@ -18,4 +18,4 @@ O projeto consome uma massa de testes de um arquivo .json que está dentro da pa
 
 #Executando o projeto
 
-Para rodar o projeto depois de configurado os requisitos citados acima, basta clicar no botão "play" dentro da classe ApiTest ou se quiser rodar por linha de comando. basta executar o seguinte comando: "mvn surefire test" com ele todos os tests do projeto serão executados.
+Para rodar o projeto depois de configurado os requisitos citados acima, basta clicar no botão "play" dentro da classe ApiTest ou se quiser rodar por linha de comando. basta executar o seguinte comando: "mvn surefire:test" com ele todos os tests do projeto serão executados.
